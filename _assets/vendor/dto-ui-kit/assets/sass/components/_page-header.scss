@@ -82,7 +82,7 @@ Markup: templates/page-header.html
 Style guide: Page header.01 Header
 */
 .page-header {
-  @include linear-gradient(to top, $non-white, $white, $fallback: $non-white);
+  @include linear-gradient(to top, $white, $white, $fallback: $white);
 
   padding-top: $base-spacing;
   box-shadow: 0 -6px $border-colour inset;
