@@ -1,0 +1,27 @@
+.criteria-heading {
+
+  background-color:$non-white;
+  padding:25px 20px 5px 88px;
+  color:$dark-aqua;
+  position:relative;
+  h1 {
+    font-size:33px;
+    line-height:1;
+    color:$dark-aqua;
+
+    span {
+      position:absolute;
+      left:10px;
+      font-size:50px;
+      font-weight:700;
+      text-align:center;
+      width:77px;
+      line-height:1;
+    }
+  }
+
+  .criteria-subtitle {
+    
+  }
+  
+}

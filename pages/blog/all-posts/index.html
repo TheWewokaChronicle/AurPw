@@ -1,0 +1,10 @@
+---
+layout: basic
+title: All blog posts
+permalink: /blog/all-posts/
+---
+<ul class="list-horizontal">
+{% for post in site.categories['blog'] %}
+  {% include post-list-item.html %}
+{% endfor %}
+</ul>

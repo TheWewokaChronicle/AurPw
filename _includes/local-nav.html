@@ -1,0 +1,31 @@
+{% assign localnav = layout.localnav %}
+{% if page.localnav %}
+    {% assign localnav = page.localnav %}
+{% endif %}
+
+{% if localnav and page.layout != 'guide' %}
+<aside class="sidebar">
+    <nav class="local-nav" aria-label="main navigation">
+        <h1 class="is-visuallyhidden">Menu</h1>
+        <ul>
+            {% if localnav == 'digital-service-standard' %}
+                {% assign items = site.data.digital-service-standard_localnav %}
+            {% elsif localnav == 'digital-service-standard-criteria' %}
+                {% assign items = site.data.digital-service-standard-criteria_localnav %}
+            {% elsif localnav == 'budget' %}
+                {% assign items = site.data.budget_localnav %}
+            {% elsif localnav == 'what-we-do' %}
+                {% assign items = site.data.what-we-do_localnav %}
+            {% elsif localnav == 'who-we-are' %}
+                {% assign items = site.data.who_we_are_localnav %}
+            {% endif %}
+
+            {% for item in items %}
+                {% include localnav-markup.html %}
+            {% endfor %}
+        </ul>
+
+    </nav>
+</aside>
+
+{% endif %}

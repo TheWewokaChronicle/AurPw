@@ -1,0 +1,27 @@
+.transformation-agenda {
+  .index-links {
+    h2 {
+      font-size: rem(17);
+      font-weight: $base-font-weight;
+    }
+  }
+  // Fix font size bug from .govspeak
+  .list-vertical--thirds {
+    h3, h4 {
+      font-size: rem(18);
+      margin-top: 0;
+      @include ie-lte(8) {
+        font-size: 18px;
+      }
+    }
+  }
+  .roadmap {
+    width: 100%;
+    a {
+      border-bottom: 0;
+    }
+    a:hover {
+      background-color: initial;
+    }
+  }
+}

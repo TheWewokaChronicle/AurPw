@@ -1,0 +1,22 @@
+---
+layout: basic
+title: All news
+permalink: /news/all/
+searchexcerpt: All the news from the Digital Transformation Agency.
+---
+<ul class="list-horizontal">
+    {% assign news = site.empty-array %}
+    {% for post in site.posts %}
+        {% if post.categories contains 'blog' %}
+            {% if post.tags contains 'dta-news' %}
+                {% assign news = news | push: post %}
+            {% endif %}
+        {% elsif post.categories contains 'news' %}
+            {% assign news = news | push: post %}
+        {% endif %}
+    {% endfor %}
+
+  {% for post in news %}
+    {% include post-list-item.html %}
+  {% endfor %}
+</ul>

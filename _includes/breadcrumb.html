@@ -1,0 +1,66 @@
+{% if page.layout == 'post' %}
+  {% capture lis%}
+  {% if page.category contains 'blog' %}
+<li><a href="{{site.baseurl}}/blog/">Blog</a></li>
+  {% else %}
+<li><a href="{{site.baseurl}}/news/">News</a></li>
+  {% endif %}
+  {% endcapture %}
+{% endif %}
+
+<div class="global-breadcrumb">
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <div class="wrapper">
+      <ul>
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+
+{% if lis %}
+        {{ lis }}
+        <li>{{ page.title}}</li>
+
+{% elsif page.breadcrumb_type == !nil and page.author == !nil %}
+  {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+  {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+
+  {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:2 }}{% endcapture %}
+
+  {% for i in (1..forLoopMaxInt) %}
+
+    {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
+    {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+    {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
+
+    {% for breadcrumb_page in site.pages %}
+      {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url %}
+        {% assign label = breadcrumb_page.title %}
+        {% if breadcrumb_page.breadcrumb %}
+          {% assign label = breadcrumb_page.breadcrumb %}
+        {% endif %}
+        {% if forloop.last %}
+
+        <li>{{ label }}</li>
+        {%else %}
+
+        <li>
+          {% capture breadcrumb_page_page_url_without_index_html %}{{ breadcrumb_page.url | remove: "index.html" }}{% endcapture %}
+          <a href="{{ site.baseurl }}{{breadcrumb_page_page_url_without_index_html}}">{{label}}</a>
+        </li>
+
+
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+  {% endfor %}
+
+  {% assign label = page.title %}
+  {% if page.breadcrumb %}
+    {% assign label = page.breadcrumb %}
+  {% endif %}
+        <li>{{ label }}</li>
+{% endif %}
+
+      </ul>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,73 @@
+.lt-ie9 {
+  .page-header {
+    &__logo {
+      background-image: url('images/logo_dta_inline.png');
+    }
+  }
+}
+.page-header {
+  a.logo {
+    width: 523px;
+    height: 130px;
+  }
+  &__logo {
+    background-image: url('images/logo_dta_inline.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 523px;
+    height: 130px;
+    display: block;
+    margin: 0 auto $base-spacing auto;
+
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+
+    @include media($mobile-only) {
+      margin-bottom: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    @include media($tablet) {
+      max-width: 45%;
+      float: left;
+    }
+
+    @include media($desktop) {
+      max-width: 500px;
+      height: 150px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .site-search {
+    @include media($mobile) {
+      width: 100%;
+      float: none;
+      margin-top: 0;
+    }
+    @include media($tablet) {
+      float: right;
+      max-width: 40%;
+      margin-top: $base-spacing;
+    }
+    @include media($desktop) {
+      max-width: 450px;
+      margin-top: $base-spacing * 2;
+    }
+  }
+
+  .site-nav {
+    clear: left;
+
+    @include ie-lte(9) {
+      @include ie-clearfix;
+    }
+  }
+}

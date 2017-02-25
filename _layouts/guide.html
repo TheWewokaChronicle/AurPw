@@ -1,0 +1,47 @@
+---
+layout: base
+phase: Alpha
+issue_collector: true
+---
+
+<article  id="content" class="content-main">
+
+    {% if page.phase %}
+    {% assign phase = page.phase %}
+    {% elsif layout.phase %}
+    {% assign phase = layout.phase %}
+    {% endif %}
+
+    {% if phase %}
+    <p>This content is currently in <span class="badge--{{ phase | downcase }}">{{ phase }}</span></p>
+    {% endif %}
+
+    <div class="back-to-guides"><a href="{{site.baseurl}}/standard/design-guides/">Back to guides</a></div>
+
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.lede %}
+    <div class="lede"><p>{{ page.lede }}</p></div>
+    {% endif %}
+
+    {{ content }}
+</article>
+
+<aside class="sidebar">
+    <div class="guides-links">
+        {% if page.localnav == 'authentification-frameworks' %}
+            {% assign items = site.data.authentification-frameworks_localnav %}
+        {% elsif page.localnav == 'common-website-elements' %}
+            {% assign items = site.data.common-website-elements_localnav %}
+        {% endif %}
+        {% if items %}
+        <h2>Also in the guide</h2>
+        <ul>
+            {% for item in items %}
+                {% include localnav-markup.html %}
+            {% endfor %}
+        {% endif %}
+        </ul>
+        
+        {% include related-guides.html %}
+    </div>
+</aside>

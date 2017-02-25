@@ -1,0 +1,39 @@
+<li>
+{% assign url = post.url %}
+{% if post.external-url %}
+  {% assign url = post.external-url%}
+{% endif %}
+
+<figure>
+{% if post.thumbnail %}
+  <img src="{{site.baseurl}}{{ post.thumbnail }}" alt="" />
+{% endif %}
+</figure>
+<article>
+  <h3>
+    <a href="{{ url }}">{{ post.title }}</a>
+  </h3>
+  <div class="meta">
+    <time datetime="{{ post.date }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    <span>{{ post.author }}</span>
+  </div>
+
+{% if post.searchexcerpt %}
+  <p>{{ post.searchexcerpt }}</p>
+{% else %}
+  <p>{{ post.content | strip_html | truncatewords:50}}</p>
+{% endif %}
+{% if post.tags.size > 0 %}
+  <footer class="tags">
+    <dl>
+      <dt>Tags:</dt>
+      {% for tag in post.tags %}
+      {% if tag != '' %}
+      <dd><a href="{{site.baseurl}}{{ site.tag_dir }}/{{ tag | slugify }}/">{%if tag=="dto-news"%}dto news{%else%}{{tag}}{%endif%}</a></dd>
+      {% endif %}
+      {% endfor %}
+    </dl>
+  </footer>
+{% endif %}
+</article>
+</li>

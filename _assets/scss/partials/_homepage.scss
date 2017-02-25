@@ -1,0 +1,85 @@
+.home-heading {
+  @include media($tablet) {
+    border-bottom: 6px solid $light-aqua;
+    padding-bottom: $tiny-spacing;
+  }
+}
+
+// Test to check if this can be removed post uikit 1.9.1/1.10.
+.about-dta {
+  .abstract {
+    max-width: 25 * $base-spacing;
+    border-bottom: 0;
+  }
+}
+
+.news-media, .what-we-do {
+  @include media($tablet) {
+    li:nth-child(-n+2) {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  @include media($desktop) {
+    li:nth-child(-n+4) {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+}
+
+.what-we-do {
+  @include media($desktop) {
+    li {
+      min-height: 10em;
+      border-left: solid 1px $light-grey;
+      padding: $small-spacing 0 $small-spacing $base-spacing;
+      margin-bottom: $base-spacing;
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
+// Shouldn't be necessary due to uikit's _grid-settings L#98 -- test after uikit 1.9.1/1.10.
+main {
+  @include ie-clearfix;
+}
+
+// Test why the ie mixin doesn't suffice and that we have to use selectivizr's classes.
+.lt-ie9 .content-main {
+  width: 70%;
+  float: left;
+}
+
+// FIX from treb
+.lt-ie9 .list-vertical--fourths,
+.lt-ie9 .list-vertical--thirds,
+.lt-ie9 .homepage-footer {
+  @include ie-clearfix; //FIXME! Blurg. Report to UI-Kit
+}
+
+.homepage-footer {
+  @include outer-container;
+  @include ie-clearfix;
+
+  .leadership {
+    @include media($tablet) {
+      @include span-columns(6 of 12);
+    }
+  }
+
+  .social-media {
+    @include media($tablet) {
+      @include span-columns(6 of 12);
+    }
+
+    .social-media-links {
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}

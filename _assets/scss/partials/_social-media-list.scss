@@ -1,0 +1,79 @@
+// This partial should be refactored alongside _icons.scss.
+
+.social-media-links {
+	@include clearfix;
+
+	margin-top: $base-spacing;
+	display: block;
+	overflow: hidden;
+	padding-left: 0;
+	list-style: none;
+
+	li {
+		margin-bottom: $small-spacing;
+	}
+
+	h2 {
+		display: inline;
+		// temporary padding fix, clean up when disqus and other styling of posts is fixed
+		padding-right: 50px;
+	}
+
+	.email,
+	.slideshare,
+	.twitter,
+	.linkedin,
+	.youtube,
+	.facebook,
+	.github {
+		margin-right: $small-spacing;
+		text-decoration: none;
+
+		&:before {
+
+		background-position: center center;
+		background-repeat: no-repeat;
+    background-size: 100% auto;
+		content: ' ';
+    display: inline-block;
+		height: $medium-spacing;
+		margin-right: $tiny-spacing;
+		width: $medium-spacing;
+		}
+	}
+	.email {
+		&:before {
+			@extend %email;
+		}
+	}
+	.twitter {
+		&:before {
+			@extend %twitter;
+		}
+	}
+	.linkedin {
+		&:before {
+			@extend %linkedin;
+		}
+	}
+	.youtube {
+		&:before {
+			@extend %youtube;
+		}
+	}
+	.slideshare {
+		&:before {
+			@extend %slideshare;
+		}
+	}
+	.facebook {
+		&:before {
+			@extend %facebook;
+		}
+	}
+	.github {
+		&:before {
+			content: '\f09b';
+		}
+	}
+}
