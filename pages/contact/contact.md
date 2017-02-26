@@ -27,10 +27,10 @@ Our offices are at:
 
 ## Private Equity
 
-If you have any question or you would like to register your interest, please email [marketplace@digital.gov.au](mailto:marketplace@digital.gov.au).
+If you have any question or you would like to register your interest, please email [info@arusp.com](mailto:info@arusp.com).
 
 ## Defence
 
-Do you have questions about Defence? Please contact us by using the following email [standard@digital.gov.au](mailto:standard@digital.gov.au). 
+Do you have questions about Defence? Please contact us by using the following email [defence@arusp.com](mailto:defence@arusp.com). 
 
 
