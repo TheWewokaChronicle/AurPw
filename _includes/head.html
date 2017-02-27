@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endunless %}
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}{{ site.baseurl }}/images/icons/favicon.ico">
-  <meta name="creator" content="Digital Transformation Agency">
+  <meta name="creator" content="Arus Partners">
   <meta name="type" content="Text">
   <meta name="modified" content="{{ page.date | date: "%b %-d, %Y" }}">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@{{ site.twitter }}" />
 
   {% if page.title %}
   <title>{{ page.title }} | {{ site.title }}</title>
@@ -69,18 +67,13 @@
 {
   "@context" : "http://schema.org",
   "@type" : "Organization",
-  "name" : "Digital Transformation Agency",
-  "url" : "https://www.dta.gov.au",
-  "logo": "https://www.dta.gov.au/images/dta-snippet-logo.png",
-  "sameAs" : [
-    "https://twitter.com/{{ site.twitter }}",
-    "https://www.linkedin.com/company/digital-transformation-office",
-    "https://www.youtube.com/channel/UCmDkFN3UlK2wSKDQQhd-Y-A",
-    "http://www.slideshare.net/DTO-slides"
+  "name" : "Arus Partners",
+  "url" : "https://www.arusp.com",
+  "logo": "https://www.arusp.com/images/dta-snippet-logo.png",
   ],
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.dta.gov.au/search/?q={search_term_string}",
+    "target": "https://www.arusp.com/search/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
