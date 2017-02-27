@@ -1,14 +1,11 @@
-title: Digital Transformation Agency
-email: web.team@digital.gov.au
+title: Arus Partners
+email: info@arusp.com
 description: > # this means to ignore newlines until "baseurl:"
-  Driving the digital transformation of government information and services,
-  making them simpler, clearer, faster.
+  Arus Partners is an european private equity firm focused on Aerospace and Defence. Our business philosophy reflects a deep-seated belief that value is created by focusing on a few fundamentals: solid management, operational excellence, optimal capital structures, disruptive technology and long term investment programs..
 baseurl: "" # bin/cibuild.sh may override this
 url: "http://localhost:4000" # bin/cibuild.sh may override this
 permalink: "/:categories/:title/"
-timezone: Australia/Canberra
-twitter: DTA
-google_tag_manager: GTM-KR7JDF
+timezone: Spain/Madrid
 tag_dir: /tags # for tags pages created by jekyll-archives
 
 # Because there is no way to instantiate an empty array, and we need to merge two filtered
@@ -89,7 +86,7 @@ defaults:
 # Config for http://prose.io editor.
 prose:
   rooturl: ''
-  siteurl: 'https://www.dta.gov.au/'
+  siteurl: 'https://www.arusp.com/'
   media: '_assets/img/posts/'
   ignore:
     - _config.yml
